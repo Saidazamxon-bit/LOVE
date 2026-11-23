@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import Emoji from './Emoji.jsx'
 import './HeartBurst.css'
 
 // To'g'ri javob bosilganda yurakchalar portlashi
@@ -26,11 +27,10 @@ export default function HeartBurst({ x, y, count = 16 }) {
           style={{
             '--dx': `${p.dx}px`,
             '--dy': `${p.dy}px`,
-            fontSize: p.size,
             animationDelay: `${p.delay}s`,
           }}
         >
-          ❤
+          <Emoji e="❤️" size={p.size} />
         </span>
       ))}
     </div>

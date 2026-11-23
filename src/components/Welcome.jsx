@@ -1,5 +1,6 @@
 import Sticker from './Sticker.jsx'
 import { NAME } from '../data/questions.js'
+import { EmojiText } from './Emoji.jsx'
 import './Welcome.css'
 
 export default function Welcome({ onStart }) {
@@ -14,13 +15,13 @@ export default function Welcome({ onStart }) {
       </h1>
       <p className="welcome__text">
         Bir nechta savol tayyorladim.<br />
-        Faqat rostini ayt — men baribir bilaman 😌
+        <EmojiText>Faqat rostini ayt — men baribir bilaman 😌</EmojiText>
       </p>
 
       <Sticker src="img/mushuklar.png" className="welcome__cats" alt="Ikki mushukcha" />
 
       <button className="btn btn--love" onClick={onStart}>
-        Boshladik ❤
+        <EmojiText>Boshladik ❤️</EmojiText>
       </button>
     </section>
   )

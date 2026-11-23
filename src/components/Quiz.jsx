@@ -3,6 +3,7 @@ import { questions, teases } from '../data/questions.js'
 import Progress from './Progress.jsx'
 import QuestionCard from './QuestionCard.jsx'
 import HeartBurst from './HeartBurst.jsx'
+import { EmojiText } from './Emoji.jsx'
 
 export default function Quiz({ onDone }) {
   const [index, setIndex] = useState(0)
@@ -39,7 +40,7 @@ export default function Quiz({ onDone }) {
         onBest={handleBest}
         onFlee={handleFlee}
       />
-      <p className="quiz__tease" aria-live="polite">{tease}</p>
+      <p className="quiz__tease" aria-live="polite"><EmojiText>{tease}</EmojiText></p>
       {burst && <HeartBurst key={burst.id} x={burst.x} y={burst.y} />}
     </section>
   )

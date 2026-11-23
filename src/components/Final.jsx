@@ -1,5 +1,6 @@
 import Sticker from './Sticker.jsx'
 import { NAME } from '../data/questions.js'
+import { EmojiText } from './Emoji.jsx'
 import './Final.css'
 
 // "i love you" harflari (rasmdan kesilgan)
@@ -37,7 +38,7 @@ export default function Final({ onRestart }) {
 
       <div className="final__polaroid">
         <img src="img/kollaj.jpg" alt="Bizning xotiralar" draggable="false" />
-        <span>bizning xotiralar ❤</span>
+        <span><EmojiText>bizning xotiralar ❤️</EmojiText></span>
       </div>
 
       <Sticker src="img/qogoz-yurak.png" className="final__heart" rotate={-8} />

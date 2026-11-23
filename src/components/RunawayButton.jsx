@@ -41,7 +41,7 @@ export default function RunawayButton({ children, avoidRef, onFlee }) {
       // birinchi qochish: avval turgan joyida "fixed" qilamiz, keyin uchirib yuboramiz
       setSlot({ width: r.width, height: r.height })
       // barmoq uzilgandan keyin bo'sh joyni asta yig'ib qo'yamiz
-      setTimeout(() => setSlot({ width: r.width, height: 0, marginTop: -12 }), 700)
+      setTimeout(() => setSlot({ width: 0, height: r.height, marginLeft: -6 }), 700)
       setPos({ x: r.left, y: r.top, w: r.width })
       requestAnimationFrame(() =>
         requestAnimationFrame(() => setPos({ x, y, w: r.width }))

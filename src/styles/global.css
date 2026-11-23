@@ -40,7 +40,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 48px 16px;
+  padding: 48px 14px;
   transform: scale(0.88);
   filter: blur(3px);
   transition: transform 1.8s cubic-bezier(0.2, 0.8, 0.2, 1), filter 1.4s ease;
@@ -80,11 +80,12 @@ body {
 }
 
 /* Eng zo'r javob — ajralib turadigan rang */
+.card .btn--love { padding: 12px clamp(12px, 4vw, 20px); font-size: clamp(1rem, 4.6vw, 1.2rem); }
 .btn--love {
   position: relative;
   font-family: 'Cormorant Garamond', serif;
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #fff6ef;
   background: linear-gradient(135deg, #c41e2a, var(--wine));
   box-shadow: 0 10px 24px -8px rgba(163, 22, 31, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.25);
@@ -102,11 +103,11 @@ body {
 /* Qochadigan oddiy javoblar */
 .btn--meh {
   font-family: 'Special Elite', monospace;
-  font-size: 0.95rem;
+  font-size: clamp(0.74rem, 3.4vw, 0.88rem);
   color: var(--muted);
   background: #efe5d6;
   border: 1.5px dashed rgba(134, 104, 93, 0.45);
-  padding: 11px 22px;
+  padding: 10px clamp(9px, 3vw, 14px);
 }
 .btn--fleeing {
   position: fixed;
@@ -115,7 +116,7 @@ body {
   transition: left 0.35s cubic-bezier(0.3, 1.4, 0.5, 1), top 0.35s cubic-bezier(0.3, 1.4, 0.5, 1);
   box-shadow: 0 8px 18px -8px rgba(43, 26, 23, 0.35);
 }
-.btn-slot { display: block; transition: height 0.4s ease, margin 0.4s ease; }
+.btn-slot { display: block; transition: width 0.4s ease, margin 0.4s ease; }
 
 .btn--ghost {
   font-family: 'Special Elite', monospace;

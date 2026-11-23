@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import Sticker from './Sticker.jsx'
 import RunawayButton from './RunawayButton.jsx'
+import { EmojiText } from './Emoji.jsx'
 import './QuestionCard.css'
 
 export default function QuestionCard({ number, total, question, onBest, onFlee }) {
@@ -24,11 +25,11 @@ export default function QuestionCard({ number, total, question, onBest, onFlee }
               className="btn btn--love"
               onClick={onBest}
             >
-              {a.text}
+              <EmojiText>{a.text}</EmojiText>
             </button>
           ) : (
             <RunawayButton key={i} avoidRef={bestRef} onFlee={onFlee}>
-              {a.text}
+              <EmojiText>{a.text}</EmojiText>
             </RunawayButton>
           )
         )}

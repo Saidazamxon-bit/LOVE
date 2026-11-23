@@ -1,14 +1,15 @@
 // Har bir savolda 3 ta javob. `best: true` — eng zo'r javob (faqat u keyingi savolga o'tkazadi).
 // Qolgan javoblar bosilmaydi — qochib ketadi :)
-export const NAME = 'Mubin'
+// Emojilar avtomatik iOS uslubidagi rasmga aylanadi (public/emoji ichida bo'lishi kerak).
+export const NAME = 'Mubina'
 
 export const questions = [
   {
     q: 'Meni sevasanmi?',
     img: 'img/barmoq-izi.png',
     answers: [
-      { text: 'Balki...' },
-      { text: 'Ha, sevaman ❤', best: true },
+      { text: 'Balki' },
+      { text: 'Ha, sevaman ❤️', best: true },
       { text: 'Yo‘q' },
     ],
   },
@@ -16,8 +17,8 @@ export const questions = [
     q: 'Meni sog‘inasanmi?',
     img: 'img/qogoz-yurak.png',
     answers: [
-      { text: 'Har daqiqa sog‘inaman', best: true },
       { text: 'Ba’zan' },
+      { text: 'Juda ham 🥺', best: true },
       { text: 'Yo‘q' },
     ],
   },
@@ -25,17 +26,17 @@ export const questions = [
     q: 'Biz ikkimiz kimga o‘xshaymiz?',
     img: 'img/mushuklar.png',
     answers: [
-      { text: 'Hech kimga' },
-      { text: 'Bilmadim' },
-      { text: 'Shu ikki mushukchaga 🐾', best: true },
+      { text: 'Bilmam' },
+      { text: 'Shularga 🐾', best: true },
+      { text: 'Itlarga' },
     ],
   },
   {
     q: 'Xafa qilib qo‘ysam, kechirasanmi?',
     img: 'img/plastir.png',
     answers: [
-      { text: 'Ha, kechiraman', best: true },
-      { text: 'O‘ylab ko‘raman' },
+      { text: 'Balki' },
+      { text: 'Ha, albatta', best: true },
       { text: 'Yo‘q' },
     ],
   },
@@ -43,9 +44,9 @@ export const questions = [
     q: 'Mening yuragim kimniki?',
     img: 'img/anatomik-yurak.png',
     answers: [
-      { text: 'Bilmayman' },
-      { text: 'Meniki, faqat meniki', best: true },
-      { text: 'Boshqaniki' },
+      { text: 'Bilmam' },
+      { text: 'Meniki 💋', best: true },
+      { text: 'Hech kimniki' },
     ],
   },
   {
@@ -53,8 +54,8 @@ export const questions = [
     img: 'img/lola.png',
     answers: [
       { text: 'Balki' },
+      { text: 'Ha, umrbod ❤️', best: true },
       { text: 'Yo‘q' },
-      { text: 'Ha, umrbod ❤', best: true },
     ],
   },
 ]
@@ -65,6 +66,6 @@ export const teases = [
   'Unaqa javob yo‘q bu yerda',
   'Qizil tugmani bos-chi 😌',
   'Ushlay olmaysan, baribir',
-  'Rostini ayt, Mubin 💋',
-  'Bu tugma uyalib qochyapti',
+  `Rostini ayt, ${NAME} 💋`,
+  'Bu tugma uyalib qochyapti 🥺',
 ]

@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import Emoji from './Emoji.jsx'
 import './FloatingHearts.css'
 
 // Fonda sekin ko'tariladigan yurakchalar
@@ -22,13 +23,12 @@ export default function FloatingHearts({ count = 18 }) {
           key={i}
           style={{
             left: `${h.left}%`,
-            fontSize: h.size,
             animationDuration: `${h.duration}s`,
             animationDelay: `${h.delay}s`,
             '--drift': `${h.drift}px`,
           }}
         >
-          ❤
+          <Emoji e="❤️" size={h.size} />
         </span>
       ))}
     </div>

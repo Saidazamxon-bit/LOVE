@@ -1,4 +1,4 @@
-# Mubin uchun ❤
+# Mubina uchun ❤️
 
 Kichkina romantik sayt: eshik ochiladi → salomlashish → savollar → "i love you".
 
@@ -19,3 +19,10 @@ npm run build    # tayyor sayt dist/ papkada
 - `src/components/RunawayButton.jsx` — qochib ketadigan tugma (kompyuterda hover, telefonda bosganda)
 - `src/components/Final.jsx` — yakuniy "i love you" sahifasi
 - `public/img/` — stikerlar
+
+## Emojilar
+
+Emojilar hamma qurilmada bir xil (iOS uslubida) ko'rinishi uchun rasm sifatida chiqariladi:
+`src/components/Emoji.jsx` matndagi emojini `public/emoji/<kod>.png` rasmiga almashtiradi.
+Yangi emoji qo'shsangiz, uning rasmini ham shu papkaga qo'shing
+(`emoji-datasource-apple` paketidagi `img/apple/64/` dan, masalan `1f60d.png`).
