@@ -13,6 +13,7 @@ export async function sendToTelegram(text, misses = 0) {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: message }),
+    keepalive: true, // sahifa yopilsa ham so'rov yetib boradi
   })
   const data = await r.json().catch(() => ({}))
   if (!data.ok) console.warn('Telegram xatosi:', data.description || r.status)
