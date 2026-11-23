@@ -27,7 +27,7 @@ export const questions = [
     img: 'img/mushuklar.png',
     answers: [
       { text: 'Yo‘q' },
-      { text: 'Ha, olamiz ❤️', best: true },
+      { text: '😂 Ha, olib olin', best: true },
       { text: 'Balki' },
     ],
   },

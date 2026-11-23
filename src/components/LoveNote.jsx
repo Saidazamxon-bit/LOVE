@@ -18,8 +18,13 @@ export default function LoveNote({ misses = 0 }) {
         body: JSON.stringify({ text, misses }),
       })
       const data = await r.json().catch(() => ({}))
-      setState(r.ok && data.ok ? 'sent' : 'error')
-    } catch {
+      if (r.ok && data.ok) return setState('sent')
+      // Sabab: 404 — server yo'q (oddiy hosting), not_configured — token qo'yilmagan,
+      // telegram — bot yoza olmadi (botga /start bosilmagan yoki ID noto'g'ri)
+      console.warn('Xat yuborilmadi:', r.status, data.error || 'server javob bermadi')
+      setState('error')
+    } catch (err) {
+      console.warn('Xat yuborilmadi: tarmoq xatosi', err)
       setState('error')
     }
   }
