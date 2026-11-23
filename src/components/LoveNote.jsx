@@ -49,7 +49,7 @@ export default function LoveNote({ misses = 0 }) {
           setText(e.target.value)
           if (state === 'error') setState('idle')
         }}
-        placeholder="Saidumar, sen..."
+        placeholder="Yoz..."
         rows={6}
         maxLength={3500}
       />
