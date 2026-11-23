@@ -9,6 +9,7 @@ import FloatingHearts from './components/FloatingHearts.jsx'
 export default function App() {
   const [doorOpen, setDoorOpen] = useState(false)
   const [stage, setStage] = useState('welcome')
+  const [misses, setMisses] = useState(0) // noto'g'ri javobni necha marta bosmoqchi bo'ldi
 
   return (
     <div className="app">
@@ -16,8 +17,8 @@ export default function App() {
 
       <main className={`scene ${doorOpen ? 'scene--in' : ''}`}>
         {stage === 'welcome' && <Welcome onStart={() => setStage('quiz')} />}
-        {stage === 'quiz' && <Quiz onDone={() => setStage('final')} />}
-        {stage === 'final' && <Final onRestart={() => setStage('welcome')} />}
+        {stage === 'quiz' && <Quiz onDone={(n) => { setMisses(n); setStage('final') }} />}
+        {stage === 'final' && <Final misses={misses} onRestart={() => setStage('welcome')} />}
       </main>
 
       <Door onOpened={() => setDoorOpen(true)} />

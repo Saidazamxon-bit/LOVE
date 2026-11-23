@@ -1,12 +1,13 @@
 import Sticker from './Sticker.jsx'
 import { NAME } from '../data/questions.js'
 import { EmojiText } from './Emoji.jsx'
+import LoveNote from './LoveNote.jsx'
 import './Final.css'
 
 // "i love you" harflari (rasmdan kesilgan)
 const words = [[0], [1, 2, 3, 4], [5, 6, 7]]
 
-export default function Final({ onRestart }) {
+export default function Final({ misses, onRestart }) {
   let n = 0
   return (
     <section className="page final">
@@ -42,6 +43,8 @@ export default function Final({ onRestart }) {
       </div>
 
       <Sticker src="img/qogoz-yurak.png" className="final__heart" rotate={-8} />
+
+      <LoveNote misses={misses} />
 
       <button className="btn btn--ghost" onClick={onRestart}>
         Yana bir bor

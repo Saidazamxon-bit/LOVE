@@ -49,7 +49,7 @@
   opacity: 0;
   animation: polaroid-in 0.9s cubic-bezier(0.2, 1.2, 0.4, 1) forwards 2.3s;
 }
-.final__polaroid img {
+.final__polaroid > img {
   display: block;
   width: 100%;
   aspect-ratio: 4 / 5;

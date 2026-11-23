@@ -23,12 +23,12 @@ export const questions = [
     ],
   },
   {
-    q: 'Biz ikkimiz kimga o‘xshaymiz?',
+    q: 'Saidumarni boxchadan olib olemi?',
     img: 'img/mushuklar.png',
     answers: [
-      { text: 'Bilmam' },
-      { text: 'Shularga 🐾', best: true },
-      { text: 'Itlarga' },
+      { text: 'Yo‘q' },
+      { text: 'Ha, olamiz ❤️', best: true },
+      { text: 'Balki' },
     ],
   },
   {

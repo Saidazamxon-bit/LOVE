@@ -25,7 +25,7 @@ export default function Quiz({ onDone }) {
       busy.current = false
       setTease('')
       if (index + 1 < questions.length) setIndex(index + 1)
-      else onDone()
+      else onDone(fleeCount.current)
     }, 750)
   }
 
