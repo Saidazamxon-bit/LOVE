@@ -55,14 +55,23 @@
 }
 .note__input:focus { border-color: var(--red); box-shadow: 0 0 0 3px rgba(163, 22, 31, 0.12); }
 .note__input::placeholder { color: rgba(134, 104, 93, 0.6); }
-.note__error {
-  margin: 10px 0 0;
-  font-family: 'Special Elite', monospace;
-  font-size: 0.85rem;
-  color: var(--red);
-}
 .note__btn { margin-top: 16px; }
 .note__btn:disabled { opacity: 0.5; cursor: default; animation: none; transform: none; }
+/* yuborilayotganda: konvert sakrab turadi, yozuv chiqmaydi */
+.note__btn.is-sending { opacity: 1; }
+.note__btn.is-sending .emoji { animation: envelope 0.7s ease-in-out infinite; }
+@keyframes envelope {
+  0%, 100% { transform: translate(0, 0) rotate(0); }
+  50% { transform: translate(4px, -5px) rotate(-12deg); }
+}
+.note__btn.is-shake { animation: shake 0.45s ease; }
+@keyframes shake {
+  0%, 100% { transform: translateX(0) }
+  20% { transform: translateX(-6px) }
+  40% { transform: translateX(6px) }
+  60% { transform: translateX(-4px) }
+  80% { transform: translateX(3px) }
+}
 .note--sent { transform: rotate(-1deg); animation-delay: 0s; padding: 26px 18px; }
 .note__thanks {
   margin: 0 0 6px;
