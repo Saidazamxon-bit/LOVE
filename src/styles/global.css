@@ -1,0 +1,143 @@
+:root {
+  --paper: #f6eee2;
+  --card: #fbf6ee;
+  --ink: #2b1a17;
+  --muted: #86685d;
+  --red: #a3161f;
+  --wine: #5c0a12;
+  --rose: #d79a95;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(ellipse at top, rgba(255, 255, 255, 0.7), transparent 60%),
+    radial-gradient(ellipse at bottom, rgba(163, 22, 31, 0.08), transparent 60%);
+  background-attachment: fixed;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+}
+
+.app {
+  min-height: 100%;
+  position: relative;
+}
+
+/* Eshik ortidagi sahna: eshik ochilganda yaqinlashib keladi */
+.scene {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 16px;
+  transform: scale(0.88);
+  filter: blur(3px);
+  transition: transform 1.8s cubic-bezier(0.2, 0.8, 0.2, 1), filter 1.4s ease;
+}
+.scene--in { transform: none; filter: none; }
+
+.page {
+  width: 100%;
+  max-width: 440px;
+  animation: page-in 0.7s ease both;
+}
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  font-family: 'Special Elite', monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Tugmalar */
+.btn {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  border-radius: 999px;
+  padding: 14px 28px;
+  touch-action: manipulation;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Eng zo'r javob — ajralib turadigan rang */
+.btn--love {
+  position: relative;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #fff6ef;
+  background: linear-gradient(135deg, #c41e2a, var(--wine));
+  box-shadow: 0 10px 24px -8px rgba(163, 22, 31, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  animation: glow 2.2s ease-in-out infinite;
+  transition: transform 0.2s ease;
+}
+.btn--love:hover { transform: translateY(-2px) scale(1.04); }
+.btn--love:active { transform: scale(0.97); }
+.btn--love:focus-visible { outline: 3px solid var(--rose); outline-offset: 3px; }
+@keyframes glow {
+  0%, 100% { box-shadow: 0 10px 24px -8px rgba(163, 22, 31, 0.7), 0 0 0 0 rgba(196, 30, 42, 0.35); }
+  50% { box-shadow: 0 10px 24px -8px rgba(163, 22, 31, 0.7), 0 0 0 10px rgba(196, 30, 42, 0); }
+}
+
+/* Qochadigan oddiy javoblar */
+.btn--meh {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.95rem;
+  color: var(--muted);
+  background: #efe5d6;
+  border: 1.5px dashed rgba(134, 104, 93, 0.45);
+  padding: 11px 22px;
+}
+.btn--fleeing {
+  position: fixed;
+  z-index: 45;
+  margin: 0;
+  transition: left 0.35s cubic-bezier(0.3, 1.4, 0.5, 1), top 0.35s cubic-bezier(0.3, 1.4, 0.5, 1);
+  box-shadow: 0 8px 18px -8px rgba(43, 26, 23, 0.35);
+}
+.btn-slot { display: block; transition: height 0.4s ease, margin 0.4s ease; }
+
+.btn--ghost {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  color: var(--red);
+  background: transparent;
+  border: 1.5px solid var(--red);
+  opacity: 0;
+  animation: fade-up 0.8s ease forwards 3.2s;
+}
+.btn--ghost:hover { background: var(--red); color: #fff6ef; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+  50% { transform: translateY(-8px) rotate(var(--r, 0deg)); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+}

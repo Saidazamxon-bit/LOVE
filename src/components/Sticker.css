@@ -1,0 +1,7 @@
+.sticker {
+  display: block;
+  transform: rotate(var(--r, 0deg));
+  filter: drop-shadow(0 6px 10px rgba(92, 10, 18, 0.18));
+  user-select: none;
+  pointer-events: none;
+}

@@ -1,0 +1,163 @@
+.door {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  perspective: 1600px;
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+}
+
+.door__light {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(255, 236, 214, 0.95), rgba(255, 236, 214, 0) 60%);
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  pointer-events: none;
+}
+.door--open .door__light { opacity: 1; animation: light-fade 2s ease forwards; }
+@keyframes light-fade { 0% { opacity: 0 } 35% { opacity: 1 } 100% { opacity: 0 } }
+
+.door__frame {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  transform-style: preserve-3d;
+}
+.door--knock .door__frame { animation: knock 0.45s ease; }
+@keyframes knock {
+  0%, 100% { transform: translateX(0) }
+  20% { transform: translateX(-4px) }
+  40% { transform: translateX(4px) }
+  60% { transform: translateX(-3px) }
+  80% { transform: translateX(2px) }
+}
+
+.door__leaf {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  background:
+    repeating-linear-gradient(90deg, rgba(0,0,0,0.06) 0 2px, transparent 2px 9px),
+    linear-gradient(160deg, #7d1019 0%, #5c0a12 55%, #3e060c 100%);
+  box-shadow: inset 0 0 0 10px #4a070e, inset 0 0 60px rgba(0, 0, 0, 0.45);
+  transition: transform 1.6s cubic-bezier(0.65, 0, 0.25, 1);
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5vh;
+  padding: 10vh 9%;
+}
+.door__leaf--left { transform-origin: left center; border-right: 2px solid #2c0408; }
+.door__leaf--right { transform-origin: right center; border-left: 2px solid #2c0408; }
+.door--open .door__leaf--left { transform: rotateY(-108deg); }
+.door--open .door__leaf--right { transform: rotateY(108deg); }
+
+.door__panel {
+  display: block;
+  height: 34vh;
+  border-radius: 4px;
+  box-shadow:
+    inset 3px 3px 0 rgba(255, 255, 255, 0.07),
+    inset -3px -3px 0 rgba(0, 0, 0, 0.35),
+    0 0 0 6px rgba(0, 0, 0, 0.12);
+}
+.door__panel--low { height: 22vh; }
+
+.door__knob {
+  position: absolute;
+  top: 52%;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff2c9, #c9a052 45%, #7a5a1c 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+.door__leaf--left .door__knob { right: 18px; }
+.door__leaf--right .door__knob { left: 18px; }
+
+/* osilgan yorliq */
+.door__sign {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: top center;
+  animation: swing 3.2s ease-in-out infinite;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.door--open .door__sign,
+.door--open .door__hint { opacity: 0; }
+
+.door__string {
+  width: 2px;
+  height: 18vh;
+  background: #c9a052;
+}
+.door__tag {
+  position: relative;
+  background: var(--paper);
+  color: var(--wine);
+  padding: 18px 26px 16px;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  background-image: repeating-linear-gradient(transparent 0 21px, rgba(158, 27, 36, 0.12) 21px 22px);
+}
+.door__tag::before {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
+  border-radius: 50%;
+  background: #3e060c;
+}
+.door__tag small {
+  display: block;
+  font-family: 'Special Elite', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.door__tag strong {
+  display: block;
+  font-family: 'Caveat', cursive;
+  font-size: clamp(2.6rem, 9vw, 3.6rem);
+  line-height: 1;
+  margin: 4px 0;
+}
+@keyframes swing {
+  0%, 100% { transform: translateX(-50%) rotate(-3deg) }
+  50% { transform: translateX(-50%) rotate(3deg) }
+}
+
+.door__hint {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8vh;
+  margin: 0;
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  font-size: 1.6rem;
+  color: #f3d9c9;
+  animation: pulse 1.8s ease-in-out infinite;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+@keyframes pulse { 50% { opacity: 0.45 } }
+
+@media (prefers-reduced-motion: reduce) {
+  .door__leaf { transition-duration: 0.6s; }
+  .door__sign, .door__hint { animation: none; }
+}

@@ -1,0 +1,22 @@
+.hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.hearts span {
+  position: absolute;
+  bottom: -40px;
+  color: var(--red);
+  opacity: 0;
+  animation: rise linear infinite;
+}
+.hearts span:nth-child(3n) { color: var(--rose); }
+@keyframes rise {
+  0% { transform: translate(0, 0) rotate(-10deg); opacity: 0; }
+  10% { opacity: 0.35; }
+  90% { opacity: 0.25; }
+  100% { transform: translate(var(--drift), -110vh) rotate(15deg); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .hearts { display: none; } }

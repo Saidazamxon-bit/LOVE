@@ -1,0 +1,52 @@
+.welcome {
+  text-align: center;
+  position: relative;
+}
+.welcome__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: clamp(2.8rem, 11vw, 5rem);
+  line-height: 1;
+  margin: 6px 0 14px;
+  color: var(--ink);
+}
+.welcome__title span {
+  font-family: 'Caveat', cursive;
+  color: var(--red);
+  font-size: 1.25em;
+  display: inline-block;
+  transform: rotate(-4deg);
+  animation: wobble 4s ease-in-out infinite;
+}
+@keyframes wobble { 50% { transform: rotate(3deg) scale(1.05) } }
+
+.welcome__text {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+.welcome__cats {
+  width: min(260px, 64vw);
+  margin: 4px auto 22px;
+  animation: float 5s ease-in-out infinite;
+}
+.welcome__lily {
+  position: absolute;
+  width: 78px;
+  top: -78px;
+  left: -6px;
+  animation: float 6s ease-in-out infinite;
+}
+.welcome__print {
+  position: absolute;
+  width: 70px;
+  top: -70px;
+  right: 0;
+  opacity: 0.9;
+}
+@media (min-width: 640px) {
+  .welcome__lily { width: 150px; left: -110px; top: -40px; }
+  .welcome__print { width: 120px; right: -100px; top: -20px; }
+}

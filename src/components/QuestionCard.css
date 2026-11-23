@@ -1,0 +1,54 @@
+.card {
+  position: relative;
+  background: var(--card);
+  border-radius: 6px;
+  padding: 34px 24px 28px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04), 0 18px 40px -18px rgba(92, 10, 18, 0.45);
+  background-image: repeating-linear-gradient(transparent 0 31px, rgba(158, 27, 36, 0.09) 31px 32px);
+  text-align: center;
+  animation: card-in 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+}
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(30px) rotate(-3deg) scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+.card__tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  width: 110px;
+  height: 26px;
+  margin-left: -55px;
+  background: rgba(217, 165, 160, 0.55);
+  transform: rotate(-3deg);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+.card__img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin: 0 auto 6px;
+  animation: float 5s ease-in-out infinite;
+}
+.card__q {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: clamp(1.9rem, 7vw, 2.6rem);
+  line-height: 1.1;
+  margin: 4px 0 24px;
+  color: var(--ink);
+}
+.card__answers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.quiz__tease {
+  min-height: 2rem;
+  margin: 16px 0 0;
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  font-size: 1.6rem;
+  color: var(--red);
+}
