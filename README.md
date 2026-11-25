@@ -42,11 +42,11 @@ Bot tokeni va chat ID: `src/data/telegram.js`.
 `public/oyin/index.html` — alohida 3D o'yin (Three.js, bitta fayl). Sayt bilan birga `/oyin/` manzilida ochiladi
 (`npm run dev` → http://localhost:5173/oyin/).
 
-Kichkina orolchada ikki qahramon: siz (yigit) va Mubina. Birga sayr qilasiz, qo'l ushlaysiz, gaplashasiz,
-quchoqlashasiz va 6 ta joyda birga esdalik yaratasiz (gul, skameyka, ko'prikcha, eman daraxti, arg'imchoq,
-tepalikda yulduzlar). Hammasi bajarilgach — final sahna.
+Dengiz bo'yidagi orolda ikki qavatli villa: shisha devorlar, zinapoya, mehmonxona, oshxona, yotoqxona, balkon,
+hovuz, favvora, palmalar, plyaj. Ikki qahramon (yigit va qiz) — birini o'zingiz boshqarasiz, ikkinchisi ergashadi.
+Vazifa yoki majburiy sahna yo'q: hamma narsa o'yinchining qo'lida.
 
-- Boshqaruv: `WASD` — yurish, `Shift` — yugurish, sichqoncha — kamera, `E` — harakat, `T` — gaplashish,
-  `Q` — quchoqlash, `H` — qo'l ushlash, `N` — kun/tun. Telefonda — joystik va tugmalar.
-- Ismlar faylning boshida: `BOY` va `GIRL`. Dialoglar `TALKS` va `SCENES` ichida.
-- Progress brauzerda saqlanadi (localStorage).
+- Boshqaruv: `WASD` — yurish, `Shift` — yugurish, `Probel` — sakrash, sichqoncha — qarash, g'ildirak — kamera masofasi,
+  `E` — o'tirish/turish (divan, stul, karavot, shezlong, favvora, skameyka), `H` — qo'l ushlash, `Q` — quchoqlash,
+  `Tab` — qahramonni almashtirish, `V` — 1-shaxs/3-shaxs kamera, `N` — kun/shom/tun.
+- Telefonda — joystik, ekranni surib qarash va tugmalar.
