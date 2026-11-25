@@ -36,3 +36,17 @@ Bot tokeni va chat ID: `src/data/telegram.js`.
 - Sayt istalgan hostingda ishlaydi (GitHub Pages, Vercel, Netlify, oddiy fayl).
 - Token sayt kodida ochiq turadi. Kimdir botni suiiste'mol qilsa:
   @BotFather → `/revoke` → yangi tokenni `src/data/telegram.js` ga qo'ying.
+
+## 3D o'yin: "Ikkimizning orolcha"
+
+`public/oyin/index.html` — alohida 3D o'yin (Three.js, bitta fayl). Sayt bilan birga `/oyin/` manzilida ochiladi
+(`npm run dev` → http://localhost:5173/oyin/).
+
+Kichkina orolchada ikki qahramon: siz (yigit) va Mubina. Birga sayr qilasiz, qo'l ushlaysiz, gaplashasiz,
+quchoqlashasiz va 6 ta joyda birga esdalik yaratasiz (gul, skameyka, ko'prikcha, eman daraxti, arg'imchoq,
+tepalikda yulduzlar). Hammasi bajarilgach — final sahna.
+
+- Boshqaruv: `WASD` — yurish, `Shift` — yugurish, sichqoncha — kamera, `E` — harakat, `T` — gaplashish,
+  `Q` — quchoqlash, `H` — qo'l ushlash, `N` — kun/tun. Telefonda — joystik va tugmalar.
+- Ismlar faylning boshida: `BOY` va `GIRL`. Dialoglar `TALKS` va `SCENES` ichida.
+- Progress brauzerda saqlanadi (localStorage).
